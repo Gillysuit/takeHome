@@ -10,7 +10,7 @@ module.exports = {
   },
   output: {
     filename: "bundle.js",
-    path: path.resolve("./dist")
+    path: path.join(__dirname, "./dist")
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"]
@@ -23,7 +23,7 @@ module.exports = {
   devServer: {
     proxy: {
       "/api": {
-        target: 8080,
+        target: 300,
         publicPath: "/dist/",
         historyApiFallback: true
       }
@@ -49,11 +49,11 @@ module.exports = {
             }
           }
         ]
-        // {
-        //   test: /\.scss$/,
-        //   exclude: /(node_modules)/,
-        //   use: ['style-loader', 'css-loader', 'sass-loader']
-        // }
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   }
