@@ -6,7 +6,7 @@ const PORT = 3000;
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
 app.get('/', (req, res) => {
-  res.senFile(path.join(__dirname, '../index.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 })
 
 app.get('/api', (req, res) => {
