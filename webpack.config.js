@@ -24,10 +24,11 @@ module.exports = {
     proxy: {
       "/api": {
         target: 8080,
-        publicPath: "/dist",
+        publicPath: "/dist/",
         historyApiFallback: true
       }
-    }
+    },
+    publicPath: "/dist/"
   },
   module: {
     rules: [
