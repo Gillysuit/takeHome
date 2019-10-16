@@ -5,13 +5,15 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:css-modules/recommended"
   ],
   "rules": {
     "react/prop-types": 0,
-    "no-console": 1
+    "no-console": 1,
+    "css-modules/no-unused-class": 0
   },
-  "plugins": ["react", "import", "jsx-a11y", "prettier"],
+  "plugins": ["react", "import", "jsx-a11y", "prettier", "css-modules"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",

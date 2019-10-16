@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Gils BoilerPlate</h1>
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [version] = useState(1);
+
+  return (
+    <div>
+      <h1>{`gil's boilerplate ${version}`}</h1>
+    </div>
+  );
+};
 
 export default App;
