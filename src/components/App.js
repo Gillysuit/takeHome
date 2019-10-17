@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import AvatarNotifier from "./AvatarNotifier";
 
 const App = () => {
-  const [version] = useState(1);
-
   return (
     <div>
-      <h1>{`gil's boilerplate ${version}`}</h1>
+      <h1>{` User Dashboard `}</h1>
+      <AvatarNotifier />
     </div>
   );
 };
