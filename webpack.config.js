@@ -21,12 +21,9 @@ module.exports = {
     chunks: true
   },
   devServer: {
+    port: 8080,
     proxy: {
-      "/api": {
-        target: 300,
-        publicPath: "/dist/",
-        historyApiFallback: true
-      }
+      "/api": "http://localhost:3000"
     },
     publicPath: "/dist/"
   },
