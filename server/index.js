@@ -16,7 +16,9 @@ app.get("/api/getUpdates", (req, res) => {
 
   fetch(updatesURL)
     .then(resp => resp.text())
-    .then(gistData => res.send(JSON.stringify(gistData.split("\n"))));
+    .then(gistData => {
+      res.send(JSON.stringify(gistData.split("\n")));
+    });
 });
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
