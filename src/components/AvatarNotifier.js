@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import { makeStyles } from "@material-ui/core/styles";
+
+import UpdatesModal from "./UpdatesModal";
 
 const useStyles = makeStyles({
   bigAvatar: {
@@ -15,11 +17,30 @@ const userImg =
 
 const AvatarNotifier = () => {
   const classes = useStyles();
+
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <div>
       <Badge badgeContent={2} color="secondary">
-        <Avatar src={userImg} className={classes.bigAvatar} />
+        <Avatar
+          src={userImg}
+          className={classes.bigAvatar}
+          onClick={e => handleClick(e)}
+        />
       </Badge>
+      <UpdatesModal
+        anchorEl={anchorEl}
+        handleClose={handleClose}
+      ></UpdatesModal>
     </div>
   );
 };

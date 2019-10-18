@@ -3,10 +3,10 @@ import AvatarNotifier from "./AvatarNotifier";
 
 const App = () => {
   return (
-    <div>
-      <h1>{` User Dashboard `}</h1>
+    <header>
+      <h2>{` User Dashboard `}</h2>
       <AvatarNotifier />
-    </div>
+    </header>
   );
 };
 
