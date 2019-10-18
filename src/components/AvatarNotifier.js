@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Badge from "@material-ui/core/Badge";
 import { makeStyles } from "@material-ui/core/styles";
@@ -17,8 +17,16 @@ const userImg =
 
 const AvatarNotifier = () => {
   const classes = useStyles();
-
   const [anchorEl, setAnchorEl] = useState(null);
+  //fetch transformed data from server side.
+  useEffect(() => {
+    const updatesAPI = "api/getUpdates";
+    fetch(updatesAPI)
+      .then(res => res.json())
+      .then(updates => {
+        console.log(updates);
+      });
+  });
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
